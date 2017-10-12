@@ -1,3 +1,30 @@
-// Place all the styles related to the objs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  background-color: #eee;
+  list-style: none;
+  min-width: 200px;
+  li {
+    background-color: #ccc;
+    span {
+      padding: 7px 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    form {
+      label#obj_title {
+        width: auto;
+      }
+      input#obj_title {
+        width: calc( 100% - 65px );
+      }
+      input#obj_influence, input#deadline, input#time {
+        width: calc( 100% - 50px );
+      }
+      input#obj_time {
+        width: calc( 100% - 65px );
+      }
+      input#obj_deadline {
+        width: calc( 100% - 35px );
+      }
+    }
+  }
+}

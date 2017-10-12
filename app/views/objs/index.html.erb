@@ -1,2 +1,50 @@
-<h1>Objs#index</h1>
-<p>Find me in app/views/objs/index.html.erb</p>
+<div class="container">
+  <h1>auto_align_app</h1>
+  <li class="row">
+    <%= form_for(@obj, method: :post, url: objs_path, class: 'form-inline') do |f| %>
+      <span class="col-xs-5">
+        <%= f.label :title, 'タスク名' %>
+        <%= f.text_field :title, placeholder: 'タスク名' %>
+      </span>
+      <span class="col-xs-2">
+        <%= f.label :influence, '影響力' %>
+        <%= f.text_field :influence, placeholder: '1~100' %>
+      </span>
+      <span class="col-xs-2">
+        <%= f.label :time, '所要時間' %>
+        <%= f.text_field :time, placeholder: '分単位' %>
+      </span>
+      <span class="col-xs-2">
+        <%= f.label :deadline, '期日' %>
+        <%= f.text_field :deadline, placeholder: '期日' %>
+      </span>
+      <span class="col-xs-1 send" style="text-align: center;">
+        <%= f.submit 'Send' %>
+      </span>
+    <% end %>
+  </li>
+  <li class="row">
+    <span class="col-xs-6">タスク名</span>
+    <span class="col-xs-2">影響力</span>
+    <span class="col-xs-2">所要時間</span>
+    <span class="col-xs-2">期日</span>
+  </li>
+  <li class="row">
+    <span class="col-xs-6">タスク名</span>
+    <span class="col-xs-2">影響力</span>
+    <span class="col-xs-2">所要時間</span>
+    <span class="col-xs-2">期日</span>
+  </li>
+  <li class="row">
+    <span class="col-xs-6">タスク名</span>
+    <span class="col-xs-2">影響力</span>
+    <span class="col-xs-2">所要時間</span>
+    <span class="col-xs-2">期日</span>
+  </li>
+  <li class="row">
+    <span class="col-xs-6">タスク名</span>
+    <span class="col-xs-2">影響力</span>
+    <span class="col-xs-2">所要時間</span>
+    <span class="col-xs-2">期日</span>
+  </li>
+</div>
