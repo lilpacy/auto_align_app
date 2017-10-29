@@ -3,6 +3,6 @@
   <span class="col-xs-2"><%= obj.influence %></span>
   <span class="col-xs-2"><%= obj.time %></span>
   <span class="col-xs-2"><%= obj.deadline != nil ? obj.deadline.strftime('%Y/%m/%d') : '　　　　　' %>
-    <%= link_to '削除', obj_path(obj), method: :delete　%>
+    <%= link_to '削除', obj_path(obj), method: :delete %>
   </span>
 </li>
