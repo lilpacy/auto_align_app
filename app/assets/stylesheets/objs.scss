@@ -22,9 +22,12 @@
       input#obj_time {
         width: calc( 100% - 65px );
       }
-      input#obj_deadline {
+      input#datepicker {
         width: calc( 100% - 35px );
       }
+    }
+    .delete {
+      text-align: right;
     }
   }
 }

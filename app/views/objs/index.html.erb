@@ -16,35 +16,12 @@
       </span>
       <span class="col-xs-2">
         <%= f.label :deadline, '期日' %>
-        <%= f.text_field :deadline, placeholder: '期日' %>
+        <%= f.text_field :deadline, placeholder: '期日', id: 'datepicker' %>
       </span>
       <span class="col-xs-1 send" style="text-align: center;">
         <%= f.submit 'Send' %>
       </span>
     <% end %>
   </li>
-  <li class="row">
-    <span class="col-xs-6">タスク名</span>
-    <span class="col-xs-2">影響力</span>
-    <span class="col-xs-2">所要時間</span>
-    <span class="col-xs-2">期日</span>
-  </li>
-  <li class="row">
-    <span class="col-xs-6">タスク名</span>
-    <span class="col-xs-2">影響力</span>
-    <span class="col-xs-2">所要時間</span>
-    <span class="col-xs-2">期日</span>
-  </li>
-  <li class="row">
-    <span class="col-xs-6">タスク名</span>
-    <span class="col-xs-2">影響力</span>
-    <span class="col-xs-2">所要時間</span>
-    <span class="col-xs-2">期日</span>
-  </li>
-  <li class="row">
-    <span class="col-xs-6">タスク名</span>
-    <span class="col-xs-2">影響力</span>
-    <span class="col-xs-2">所要時間</span>
-    <span class="col-xs-2">期日</span>
-  </li>
+  <%= render partial: 'obj', collection: @objs %>
 </div>
