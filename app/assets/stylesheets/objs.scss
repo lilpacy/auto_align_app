@@ -2,6 +2,14 @@
   background-color: #eee;
   list-style: none;
   min-width: 200px;
+  .header {
+    position: relative;
+    .login {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+    }
+  }
   li {
     background-color: #ccc;
     span {
