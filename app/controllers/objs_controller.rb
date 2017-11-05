@@ -1,7 +1,7 @@
 class ObjsController < ApplicationController
   def index
     @obj = Obj.new
-    @objs = Obj.all.sort_by {|obj|
+    @objs = current_user.objs.sort_by {|obj|
       days_left = (obj.deadline != nil) ? (("#{obj.deadline - Time.now }".to_f) / 86400).to_f : 100.0
       urgency = "#{100 - days_left}".to_f
       if 0 < urgency #残り日数が100日を切っているなら
@@ -34,6 +34,6 @@ class ObjsController < ApplicationController
   private
 
   def obj_params
-    params.require(:obj).permit(:title, :influence, :time, :deadline)
+    params.require(:obj).permit(:title, :influence, :time, :deadline).merge!(user_id: current_user.id)
   end
 end
