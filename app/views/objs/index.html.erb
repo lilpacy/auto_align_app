@@ -11,7 +11,7 @@
       <%= form_for(@obj, method: :post, url: objs_path, class: 'form-inline') do |f| %>
         <span class="col-xs-4">
           <%= f.label :title, 'タスク名' %>
-          <%= f.text_field :title, placeholder: 'タスク名' %>
+          <%= f.text_field :title, placeholder: 'タスク名', autofocus: true %>
         </span>
         <span class="col-xs-2">
           <%= f.label :influence, '影響力' %>
