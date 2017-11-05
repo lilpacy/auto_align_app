@@ -5,9 +5,9 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css">
+    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script>
       $(function() {
         $("#datepicker").datepicker();
