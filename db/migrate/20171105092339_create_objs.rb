@@ -4,7 +4,7 @@ class CreateObjs < ActiveRecord::Migration[5.0]
       t.string :title
       t.integer :influence
       t.integer :time
-      t.deadline :deadline
+      t.datetime :deadline
       t.timestamps
     end
   end
