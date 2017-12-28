@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header row">
     <h1 class="col-xs-10">auto_align_app</h1>
-    <p class="login col-xs-2">
+    <p class="user col-xs-2">
       <%= current_user.name %>さん<br />
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
     </p>
@@ -9,9 +9,9 @@
   <div class="body">
     <li class="row">
       <%= form_for(@obj, method: :post, url: objs_path, class: 'form-inline') do |f| %>
-        <span class="col-xs-5">
+        <span class="col-xs-4">
           <%= f.label :title, 'タスク名' %>
-          <%= f.text_field :title, placeholder: 'タスク名' %>
+          <%= f.text_field :title, placeholder: 'タスク名', autofocus: true %>
         </span>
         <span class="col-xs-2">
           <%= f.label :influence, '影響力' %>
@@ -25,8 +25,8 @@
           <%= f.label :deadline, '期日' %>
           <%= f.text_field :deadline, placeholder: '期日', id: 'datepicker' %>
         </span>
-        <span class="col-xs-1 send" style="text-align: center;">
-          <%= f.submit 'Send' %>
+        <span class="col-xs-2" style="text-align: center;">
+          <%= f.submit 'Send', class: 'send' %>
         </span>
       <% end %>
     </li>
