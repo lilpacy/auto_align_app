@@ -29,6 +29,15 @@ class ObjsController < ApplicationController
     end
   end
 
+  def update
+    if Obj.find(params[:id]).update(obj_params)
+      render json: { test: 'test' }
+    else
+      flash[:alert] = "編集失敗"
+      render :index
+    end
+  end
+
   def destroy
     Obj.find(params[:id]).destroy
     redirect_to '/'
