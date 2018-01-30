@@ -4,6 +4,11 @@
   min-width: 200px;
   .header {
     position: relative;
+    .time {
+      position: absolute;
+      bottom: 0px;
+      right: 16.66666667%;
+    }
     .user {
       position: absolute;
       bottom: 0px;

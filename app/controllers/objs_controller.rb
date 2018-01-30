@@ -10,7 +10,10 @@ class ObjsController < ApplicationController
         1.0 / obj.influence.to_f
       end
       }
-    # @objs = Obj.all.sort_by {|obj| ( obj.deadline != nil ) ? (( 1.0 / obj.influence.to_f ) + obj.deadline.strftime('%Y%m%d').to_f ) : ((1.0 / obj.influence.to_f ) + 20200000.0)}
+    @sum_time = 0;
+    current_user.objs.each do |obj|
+      @sum_time += obj.time
+    end
   end
 
   def create
