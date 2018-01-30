@@ -1,8 +1,8 @@
 <li class="row">
-  <span class="col-xs-6"><%= obj.title %></span>
-  <span class="col-xs-2"><%= obj.influence %></span>
-  <span class="col-xs-2"><%= obj.time %></span>
-  <span class="col-xs-2"><%= obj.deadline != nil ? obj.deadline.strftime('%Y/%m/%d') : '　　　　　' %>
+  <span id="title" class="col-xs-6"><%= obj.title %></span>
+  <span id="influence" class="col-xs-2"><%= obj.influence %></span>
+  <span id="time" class="col-xs-2"><%= obj.time %></span>
+  <span id="deadline" class="col-xs-2"><%= obj.deadline != nil ? obj.deadline.strftime('%Y/%m/%d') : '　　　　　' %>
     <%= link_to '削除', obj_path(obj), method: :delete %>
   </span>
 </li>
