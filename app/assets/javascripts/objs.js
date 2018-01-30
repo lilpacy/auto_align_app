@@ -91,9 +91,9 @@ $(document).on('turbolinks:load', function(){
       _this = this; // グローバル変数_thisにクリックされたspanを格納
       if(!$(this).hasClass('on')){ // classにonを持ってなければ
         $(this).addClass('on'); // classにonを追加
-        var txt = $(this).text(); //spanに挟まれたテキストをtxtに格納
-        $(this).html('<input type="text" value="'+txt+'" />'); // spanに挟まれたスペースにinput要素を挿入
-        $('#deadline > input').focus().blur(function(){ // blurはフォーカスが外れたら引数のイベントハンドラを実行
+        var txt = $(this).children('p.deadline').text(); //spanに挟まれたテキストをtxtに格納
+        $(this).children('p.deadline').html('<input type="text" value="'+txt+'" />'); // spanに挟まれたスペースにinput要素を挿入
+        $('#deadline > p.deadline > input').focus().blur(function(){ // blurはフォーカスが外れたら引数のイベントハンドラを実行
           var inputVal = $(this).val(); // input要素に入力されているテキストをinputValに格納
           if(inputVal === ''){
             inputVal = this.defaultValue;
