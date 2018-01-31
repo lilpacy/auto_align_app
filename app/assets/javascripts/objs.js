@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function(){
+  $("#datepicker").datepicker();
   $('span[id="title"]').each(function(){
     $(this).click(function(){ //titleをidに持つspanがクリックされたら発火
       _this = this; // グローバル変数_thisにクリックされたspanを格納
@@ -93,12 +94,14 @@ $(document).on('turbolinks:load', function(){
         $(this).addClass('on'); // classにonを追加
         var txt = $(this).children('p.deadline').text(); //spanに挟まれたテキストをtxtに格納
         $(this).children('p.deadline').html('<input type="text" value="'+txt+'" />'); // spanに挟まれたスペースにinput要素を挿入
+        $(this).children().children().datepicker(); // children2連続は良くないがとりあえず仮置き
         $('#deadline > p.deadline > input').focus().blur(function(){ // blurはフォーカスが外れたら引数のイベントハンドラを実行
           var inputVal = $(this).val(); // input要素に入力されているテキストをinputValに格納
           if(inputVal === ''){
             inputVal = this.defaultValue;
           } // 空の場合変更前の値をinputValに格納
-          $(this).parent().removeClass('on').text(inputVal); // span要素のclassからonを削除、要素の間にinputValを挿入
+          $(this).parent().parent().removeClass('on') // parent2連続は良くないがとりあえず仮置き
+          $(this).parent().text(inputVal); // p要素のclassからonを削除、要素の間にinputValを挿入
           $.ajax({
             type: 'PUT',
             data: { obj: { deadline: inputVal } },
