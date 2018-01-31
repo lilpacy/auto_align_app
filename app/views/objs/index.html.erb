@@ -1,6 +1,9 @@
 <div class="container">
   <div class="header row">
-    <h1 class="col-xs-10">auto_align_app</h1>
+    <h1 class="col-xs-8">auto_align_app</h1>
+    <p class="time col-xs-2">合計所要時間<br />
+      <%= "#{@sum_time/60}時間#{@sum_time%60}分" %>
+    </p>
     <p class="user col-xs-2">
       <%= current_user.name %>さん<br />
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>

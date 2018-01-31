@@ -10,7 +10,10 @@ class ObjsController < ApplicationController
         1.0 / obj.influence.to_f
       end
       }
-    # @objs = Obj.all.sort_by {|obj| ( obj.deadline != nil ) ? (( 1.0 / obj.influence.to_f ) + obj.deadline.strftime('%Y%m%d').to_f ) : ((1.0 / obj.influence.to_f ) + 20200000.0)}
+    @sum_time = 0;
+    current_user.objs.each do |obj|
+      @sum_time += obj.time
+    end
   end
 
   def create
@@ -23,6 +26,15 @@ class ObjsController < ApplicationController
     else
       flash.now[:alert] = "タスクの登録に失敗しました。"
       redirect_to '/'
+    end
+  end
+
+  def update
+    if Obj.find(params[:id]).update(obj_params)
+      render json: { test: 'test' }
+    else
+      flash[:alert] = "編集失敗"
+      render :index
     end
   end
 
