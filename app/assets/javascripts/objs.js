@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function(){
             console.log(data);
           })
           .fail(function(){
-            alert('failed');
+            console.log('title');
           })
         });
       }
@@ -52,7 +52,7 @@ $(document).on('turbolinks:load', function(){
             console.log(data);
           })
           .fail(function(){
-            alert('failed');
+            console.log('influence');
           })
         });
       }
@@ -81,41 +81,39 @@ $(document).on('turbolinks:load', function(){
             console.log(data);
           })
           .fail(function(){
-            alert('failed');
+            console.log('time');
           })
         });
       }
     });
   });
-  $('span[id="deadline"]').each(function(){
-    $(this).click(function(){ //deadlineをidに持つspanがクリックされたら発火
-      _this = this; // グローバル変数_thisにクリックされたspanを格納
-      if(!$(this).hasClass('on')){ // classにonを持ってなければ
-        $(this).addClass('on'); // classにonを追加
-        var txt = $(this).children('p.deadline').text(); //spanに挟まれたテキストをtxtに格納
-        $(this).children('p.deadline').html('<input type="text" value="'+txt+'" />'); // spanに挟まれたスペースにinput要素を挿入
-        $(this).children().children().datepicker(); // children2連続は良くないがとりあえず仮置き
-        $('#deadline > p.deadline > input').focus().blur(function(){ // blurはフォーカスが外れたら引数のイベントハンドラを実行
-          var inputVal = $(this).val(); // input要素に入力されているテキストをinputValに格納
-          if(inputVal === ''){
-            inputVal = this.defaultValue;
-          } // 空の場合変更前の値をinputValに格納
-          $(this).parent().parent().removeClass('on') // parent2連続は良くないがとりあえず仮置き
-          $(this).parent().text(inputVal); // p要素のclassからonを削除、要素の間にinputValを挿入
+  $('p[class="deadline"]').each(function(){ // やたらとajax通信飛んでいるため要改善
+    $(this).on('click', function(){
+      if(!$(this).hasClass('on')){
+        $(this).addClass('on');
+        var txt = $(this).text();
+        var num = $(this).parent().attr('data');
+        $(this).html(`<input type="text" value="${txt}" />`);
+        $(this).children().datepicker();
+        $('body').mousedown(function(){
+          var inputVal = $(`span[data="${num}"] p.deadline input`).val();
+          $(`span[data="${num}"] p.deadline`).text(inputVal);
           $.ajax({
             type: 'PUT',
             data: { obj: { deadline: inputVal } },
-            url: `objs/${$(_this).attr('data')}`,
+            url: `objs/${num}`,
             dataType: 'json',
           })
           .done(function(data){
+            $('p[class="deadline"]').removeClass('on')
             console.log(data);
           })
           .fail(function(){
-            alert('failed');
+            console.log('deadline');
           })
         });
+        $(`span[data="${num}"] p.deadline, div[id="ui-datepicker-div"]`).mousedown(function(e){ e.stopPropagation() });
       }
-    });
-  });
+    })
+  })
 });
