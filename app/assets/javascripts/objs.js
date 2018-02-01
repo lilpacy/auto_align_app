@@ -16,7 +16,7 @@ $(document).on('turbolinks:load', function(){
           $.ajax({
             type: 'PUT',
             data: { obj: { title: inputVal } },
-            url: `objs/${$(_this).attr('data')}`,
+            url: 'objs/'+$(_this).attr('data'),
             dataType: 'json',
           })
           .done(function(data){
@@ -45,7 +45,7 @@ $(document).on('turbolinks:load', function(){
           $.ajax({
             type: 'PUT',
             data: { obj: { influence: inputVal } },
-            url: `objs/${$(_this).attr('data')}`,
+            url: 'objs/'+$(_this).attr('data'),
             dataType: 'json',
           })
           .done(function(data){
@@ -74,7 +74,7 @@ $(document).on('turbolinks:load', function(){
           $.ajax({
             type: 'PUT',
             data: { obj: { time: inputVal } },
-            url: `objs/${$(_this).attr('data')}`,
+            url: 'objs/'+$(_this).attr('data'),
             dataType: 'json',
           })
           .done(function(data){
@@ -93,26 +93,26 @@ $(document).on('turbolinks:load', function(){
         $(this).addClass('on');
         var txt = $(this).text();
         var num = $(this).parent().attr('data');
-        $(this).html(`<input type="text" value="${txt}" />`);
+        $(this).html('<input type="text" value="'+txt+'" />');
         $(this).children().datepicker();
         $('body').mousedown(function(){
-          var inputVal = $(`span[data="${num}"] p.deadline input`).val();
-          $(`span[data="${num}"] p.deadline`).text(inputVal);
+          var inputVal = $('span[data="'+num+'"] p.deadline input').val();
+          $('span[data="'+num+'"] p.deadline').text(inputVal);
           $.ajax({
             type: 'PUT',
             data: { obj: { deadline: inputVal } },
-            url: `objs/${num}`,
+            url: 'objs/'+num,
             dataType: 'json',
           })
           .done(function(data){
-            $('p[class="deadline"]').removeClass('on')
+            $('p.deadline').removeClass('on')
             console.log(data);
           })
           .fail(function(){
             console.log('deadline');
           })
         });
-        $(`span[data="${num}"] p.deadline, div[id="ui-datepicker-div"]`).mousedown(function(e){ e.stopPropagation() });
+        $('span[data="'+num+'"] p.deadline, div[id="ui-datepicker-div"]').mousedown(function(e){ e.stopPropagation() });
       }
     })
   })
