@@ -1,7 +1,46 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create!([
+  {email: "revivedtomorrow@gmail.com", encrypted_password: "$2a$11$NiUs1Bl4k321BoyigK/noOYRpNDjDG/9sPBKldnBiwixlGDLwifsG", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: "2018-02-07 18:23:58", sign_in_count: 15, current_sign_in_at: "2018-02-07 18:23:58", last_sign_in_at: "2018-02-02 08:09:43", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", name: "瀬戸智寛"}
+])
+Obj.create!([
+  {title: "使える時間自動算出プログラム", influence: 95, time: 60, deadline: nil, user_id: 1},
+  {title: "タスク管理、時間まで入力できるように", influence: 60, time: 60, deadline: nil, user_id: 1},
+  {title: "情報整理の方法論を極める", influence: 100, time: 600, deadline: nil, user_id: 1},
+  {title: "タスク管理、ジャンルでソートできるように", influence: 88, time: 60, deadline: nil, user_id: 1},
+  {title: "何かしらの分野での論文を複数書く", influence: 92, time: 600, deadline: nil, user_id: 1},
+  {title: "タスク管理アプリでdb設計を練習", influence: 94, time: 600, deadline: nil, user_id: 1},
+  {title: "カレンダーの空いてる予定を自動でテキストにアウトプット", influence: 70, time: 120, deadline: nil, user_id: 1},
+  {title: "逆求人サイト自己紹介更新", influence: 90, time: 120, deadline: nil, user_id: 1},
+  {title: "ここ数年の新規上場企業のサービスを見てみる", influence: 98, time: 120, deadline: nil, user_id: 1},
+  {title: "fobes asia 200 調べる", influence: 70, time: 60, deadline: nil, user_id: 1},
+  {title: "部屋の片付け", influence: 90, time: 30, deadline: nil, user_id: 1},
+  {title: "reactnativeライブラリ作成", influence: 98, time: 120, deadline: nil, user_id: 1},
+  {title: "おもしろそうなハッカソンないのか", influence: 88, time: 30, deadline: nil, user_id: 1},
+  {title: "機械学習の成果物として見せられるもの", influence: 100, time: 600, deadline: nil, user_id: 1},
+  {title: "職業図鑑読み漁る", influence: 78, time: 30, deadline: nil, user_id: 1},
+  {title: "タスク表のタスクをメールで1つ送れるように", influence: 95, time: 30, deadline: nil, user_id: 1},
+  {title: "バカでも成果の出る生活習慣確立", influence: 99, time: 30, deadline: nil, user_id: 1},
+  {title: "一番短時間でできる実績づくりを", influence: 100, time: 300, deadline: nil, user_id: 1},
+  {title: "さとうひろゆきの動画を見漁る", influence: 98, time: 60, deadline: nil, user_id: 1},
+  {title: "qiitaとかみながら数学アルゴリズム実装", influence: 100, time: 60, deadline: nil, user_id: 1},
+  {title: "ストレングスファインダーで自分の性格を相対的に語れるようにならないのか", influence: 75, time: 30, deadline: nil, user_id: 1},
+  {title: "10時間ごとにタスクの色を変えるとかできないか", influence: 90, time: 60, deadline: nil, user_id: 1},
+  {title: "カード書き写し、写真とノート", influence: 80, time: 20, deadline: "2018-01-31 00:00:00", user_id: 1},
+  {title: "タスク番号を追加", influence: 70, time: 20, deadline: nil, user_id: 1},
+  {title: "国が何を考えて教育方法などを現状にしているのかなど", influence: 82, time: 120, deadline: nil, user_id: 1},
+  {title: "メールで1日1つyoutube動画を送ってくる仕組みを", influence: 90, time: 180, deadline: nil, user_id: 1},
+  {title: "自分にしかないものはなにか", influence: 91, time: 30, deadline: nil, user_id: 1},
+  {title: "自分にしかないもの、自分にあるものをどう生かすか", influence: 91, time: 30, deadline: nil, user_id: 1},
+  {title: "ラズパイについて調べる", influence: 95, time: 30, deadline: nil, user_id: 1},
+  {title: "金融の知識×ITでなにか作れないか", influence: 92, time: 120, deadline: nil, user_id: 1},
+  {title: "スマホのデスクトップを情報蒐集用のショートカットに", influence: 70, time: 30, deadline: nil, user_id: 1},
+  {title: "snsの最強の使い方を確立できないのか", influence: 65, time: 60, deadline: nil, user_id: 1},
+  {title: "メルカリのすごいところブログにまとめる", influence: 70, time: 120, deadline: nil, user_id: 1},
+  {title: "グラミン銀行すごいところブログにまとめる", influence: 70, time: 120, deadline: nil, user_id: 1},
+  {title: "有給インターンをもっと効率的に探せるサイトで金稼ぎと早期就活を両立できるように", influence: 89, time: 180, deadline: nil, user_id: 1},
+  {title: "エイチーム、履歴書/webテスト", influence: 100, time: 60, deadline: "2018-02-12 00:00:00", user_id: 1},
+  {title: "メルカリ求人雛形作成", influence: 90, time: 120, deadline: nil, user_id: 1},
+  {title: "履歴書2枚作成", influence: 100, time: 100, deadline: "2018-02-10 00:00:00", user_id: 1},
+  {title: "タイガーモブ応募", influence: 100, time: 120, deadline: "2018-02-10 00:00:00", user_id: 1},
+  {title: "ガイアックス、voyage、リタリコ面接日程連絡", influence: 100, time: 30, deadline: "2018-02-09 00:00:00", user_id: 1},
+  {title: "タスク管理をリモートに移行", influence: 100, time: 30, deadline: "2018-02-09 00:00:00", user_id: 1}
+])
