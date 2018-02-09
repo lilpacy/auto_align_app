@@ -20,7 +20,11 @@ $(document).on('turbolinks:load', function(){
               dataType: 'json',
             })
             .done(function(data){
-              console.log(data);
+              $('div.li-wrapper').html('');
+              $.each(data, function(i,obj){
+                renderHTML(obj);
+              })
+              loadEvents();
             })
             .fail(function(){
               console.log('title');
@@ -49,7 +53,11 @@ $(document).on('turbolinks:load', function(){
               dataType: 'json',
             })
             .done(function(data){
-              console.log(data);
+              $('div.li-wrapper').html('');
+              $.each(data, function(i,obj){
+                renderHTML(obj);
+              })
+              loadEvents();
             })
             .fail(function(){
               console.log('influence');
@@ -78,7 +86,11 @@ $(document).on('turbolinks:load', function(){
               dataType: 'json',
             })
             .done(function(data){
-              console.log(data);
+              $('div.li-wrapper').html('');
+              $.each(data, function(i,obj){
+                renderHTML(obj);
+              })
+              loadEvents();
             })
             .fail(function(){
               console.log('time');
@@ -106,7 +118,11 @@ $(document).on('turbolinks:load', function(){
             })
             .done(function(data){
               $('p.deadline').removeClass('on')
-              console.log(data);
+              $('div.li-wrapper').html('');
+              $.each(data, function(i,obj){
+                renderHTML(obj);
+              })
+              loadEvents();
             })
             .fail(function(){
               console.log('deadline');
@@ -118,7 +134,7 @@ $(document).on('turbolinks:load', function(){
     })
     $('p.delete').each(function(){
       $(this).on('click', function(e){
-        var id = $('p.delete').attr('data');
+        var id = $(this).parent().attr('data');
         console.log(id,'idの中身確認');
         $.ajax({
           type: 'DELETE',
