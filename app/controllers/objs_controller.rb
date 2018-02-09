@@ -9,7 +9,7 @@ class ObjsController < ApplicationController
       else
         1.0 / obj.influence.to_f
       end
-      }
+    }
     @sum_time = 0;
     current_user.objs.each do |obj|
       @sum_time += obj.time

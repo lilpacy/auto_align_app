@@ -1,5 +1,39 @@
 $(document).on('turbolinks:load', function(){
   $("#datepicker").datepicker();
+  $('form#new_obj').on('submit', function(e){
+    e.preventDefault();
+    var params = {
+      utf8: "✓",
+      authenticity_token: $(this).children('input[name="authenticity_token"]').val(),
+      obj: {
+      title: $('input[id="obj_title"]').val(),
+      influence: $('input[id="obj_influence"]').val(),
+      time: $('input[id="obj_time"]').val(),
+      deadline: $('input[id="datepicker"]').val(),
+      },
+      commit: 'Send'
+    }
+    console.log(params, 'paramsの中身確認');
+    $.ajax({
+      type: 'POST',
+      data: params,
+      url: 'objs',
+      dataType: 'json',
+    })
+    .done(function(data){
+      console.log('success!');
+//      location.href = '/';
+    })
+    .fail(function(err){
+      console.log('fail!');
+//      location.href = '/';
+    });
+    $('input[id="obj_title"]').val('');
+    $('input[id="obj_influence"]').val('');
+    $('input[id="obj_time"]').val('');
+    $('input[id="datepicker"]').val('');
+    return false;
+  });
   $('span[id="title"]').each(function(){
     $(this).click(function(){ //titleをidに持つspanがクリックされたら発火
       _this = this; // グローバル変数_thisにクリックされたspanを格納
