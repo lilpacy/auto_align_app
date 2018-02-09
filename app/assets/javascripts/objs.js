@@ -118,7 +118,7 @@ $(document).on('turbolinks:load', function(){
     })
     $('p.delete').each(function(){
       $(this).on('click', function(e){
-        var id = $('p.delete').attr('data');
+        var id = $(this).parent().attr('data');
         console.log(id,'idの中身確認');
         $.ajax({
           type: 'DELETE',
