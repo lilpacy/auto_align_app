@@ -23,7 +23,10 @@ class ObjsController < ApplicationController
 
   def update
     if Obj.find(params[:id]).update(obj_params)
-      render json: { test: 'test' }
+      respond_to do |format|
+        format.html { redirect_to '/' }
+        format.json { render json: align_objs }
+      end
     else
       flash[:alert] = "編集失敗"
       render :index
