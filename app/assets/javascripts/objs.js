@@ -21,7 +21,27 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json',
     })
     .done(function(data){
-      console.log('success!');
+      console.log(data);
+      $('div.li-wrapper').html('');
+      $.each(data, function(i,obj){
+        var time = {
+          year: obj.deadline ? new Date(obj.deadline).getFullYear() : '',
+          month: obj.deadline ? new Date(obj.deadline).getMonth()+1 : '',
+          date: obj.deadline ? new Date(obj.deadline).getDate() : ''
+        };
+        var deadline = obj.deadline ? ''+time.year+'/'+time.month+'/'+time.date+'' : '';
+        $('div.li-wrapper').append(
+          '<li class="row">'+
+            '<span id="title" class="col-xs-6" data="'+obj.id+'">'+obj.title+'</span>'+
+            '<span id="influence" class="col-xs-2" data="'+obj.id+'">'+obj.influence+'</span>'+
+            '<span id="time" class="col-xs-2" data="'+obj.id+'">'+obj.time+'</span>'+
+            '<span id="deadline" class="col-xs-2" data="'+obj.id+'">'+
+              '<p class="deadline">'+deadline+'</p>'+
+              '<p class="delete"><a rel="nofollow" data-method="delete" href="/objs/'+obj.id+'">削除</a></p>'+
+            '</span>'+
+          '</li>'
+        );
+      })
 //      location.href = '/';
     })
     .fail(function(err){

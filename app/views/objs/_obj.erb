@@ -3,7 +3,7 @@
   <span id="influence" class="col-xs-2" data="<%= obj.id %>"><%= obj.influence %></span>
   <span id="time" class="col-xs-2" data="<%= obj.id %>"><%= obj.time %></span>
   <span id="deadline" class="col-xs-2" data="<%= obj.id %>">
-    <p class="deadline"><%= obj.deadline != nil ? obj.deadline.strftime('%Y/%m/%d') : '　　　　　' %></p>
+    <p class="deadline"><%= obj.deadline != nil ? obj.deadline.strftime('%Y/%-m/%-d') : '　　　　　' %></p>
     <p class="delete"><%= link_to '削除', obj_path(obj), method: :delete %></p>
   </span>
 </li>
