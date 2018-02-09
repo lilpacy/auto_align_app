@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function(){
-  function editInPlace(){
+  function loadEvents(){
     $('span[id="title"]').each(function(){
       $(this).click(function(){ //titleをidに持つspanがクリックされたら発火
         _this = this; // グローバル変数_thisにクリックされたspanを格納
@@ -116,6 +116,27 @@ $(document).on('turbolinks:load', function(){
         }
       })
     })
+    $('p.delete').each(function(){
+      $(this).on('click', function(e){
+        var id = $('p.delete').attr('data');
+        console.log(id,'idの中身確認');
+        $.ajax({
+          type: 'DELETE',
+          url: 'objs/'+id,
+          dataType: 'json',
+        })
+        .done(function(data){
+          $('div.li-wrapper').html('');
+          $.each(data, function(i,obj){
+            renderHTML(obj);
+          })
+          loadEvents();
+        })
+        .fail(function(err){
+          console.log('fail!');
+        });
+      });
+    });
   }
   function renderHTML(obj){
     var time = {
@@ -131,7 +152,7 @@ $(document).on('turbolinks:load', function(){
         '<span id="time" class="col-xs-2" data="'+obj.id+'">'+obj.time+'</span>'+
         '<span id="deadline" class="col-xs-2" data="'+obj.id+'">'+
           '<p class="deadline">'+deadline+'</p>'+
-          '<p class="delete" data="'+obj.id+'"><a rel="nofollow" data-method="delete" href="/objs/'+obj.id+'">削除</a></p>'+
+          '<p class="delete" data="'+obj.id+'">削除</p>'+
         '</span>'+
       '</li>'
     );
@@ -141,10 +162,9 @@ $(document).on('turbolinks:load', function(){
     $('input[id="obj_influence"]').val('');
     $('input[id="obj_time"]').val('');
     $('input[id="datepicker"]').val('');
-    return false; // 連続投稿を可能に
   }
   $("#datepicker").datepicker();
-  editInPlace();
+  loadEvents();
   $('form#new_obj').on('submit', function(e){
     e.preventDefault();
     var params = {
@@ -169,12 +189,13 @@ $(document).on('turbolinks:load', function(){
       $('div.li-wrapper').html('');
       $.each(data, function(i,obj){
         renderHTML(obj);
-        editInPlace();
       })
+      loadEvents();
     })
     .fail(function(err){
       console.log('fail!');
     });
     resetInput();
+    return false; // 連続投稿を可能に
   });
 });

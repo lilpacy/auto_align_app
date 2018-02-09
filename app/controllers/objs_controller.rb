@@ -32,7 +32,10 @@ class ObjsController < ApplicationController
 
   def destroy
     Obj.find(params[:id]).destroy
-    redirect_to '/'
+    respond_to do |format|
+      format.html { redirect_to '/' }
+      format.json { render json: align_objs }
+    end
   end
 
   private
