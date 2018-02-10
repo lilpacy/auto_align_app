@@ -1,4 +1,10 @@
 .container {
+  h1 {
+    font-size: 3rem;
+  }
+  a {
+    color: #c00;
+  }
   background-color: #eee;
   list-style: none;
   width: 100%;
@@ -46,6 +52,8 @@
       }
       .delete {
         text-align: right;
+        color: #c00;
+        cursor: pointer;
       }
     }
   }

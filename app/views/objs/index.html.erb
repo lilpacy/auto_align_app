@@ -5,7 +5,7 @@
       <%= "#{@sum_time/60}時間#{@sum_time%60}分" %>
     </p>
     <p class="user col-md-2 col-xs-3">
-      <%= current_user.name %>さん<br />
+      <%= current_user.name %><br />
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
     </p>
   </div>
