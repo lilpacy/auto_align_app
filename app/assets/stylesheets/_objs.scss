@@ -1,15 +1,15 @@
 .container {
   font-size: 16px;
+  background-color: #eee;
+  list-style: none;
+  width: 100%;
+  max-width: 1000px;
   h1 {
     font-size: 3rem;
   }
   a {
     color: #c00;
   }
-  background-color: #eee;
-  list-style: none;
-  width: 100%;
-  max-width: 1000px;
   .header {
     position: relative;
     .time {
