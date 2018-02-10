@@ -87,9 +87,12 @@ $(document).on('turbolinks:load', function(){
             })
             .done(function(data){
               $('div.li-wrapper').html('');
+              var sum = 0;
               $.each(data, function(i,obj){
                 renderHTML(obj);
+                sum += obj.time
               })
+              $('span.sum').html(Math.floor(sum/60)+'h'+sum%60+'m');
               loadEvents();
             })
             .fail(function(){
@@ -143,9 +146,12 @@ $(document).on('turbolinks:load', function(){
         })
         .done(function(data){
           $('div.li-wrapper').html('');
+          var sum = 0;
           $.each(data, function(i,obj){
             renderHTML(obj);
+            sum += obj.time
           })
+          $('span.sum').html(Math.floor(sum/60)+'h'+sum%60+'m');
           loadEvents();
         })
         .fail(function(err){
@@ -203,9 +209,12 @@ $(document).on('turbolinks:load', function(){
     })
     .done(function(data){
       $('div.li-wrapper').html('');
+      var sum = 0;
       $.each(data, function(i,obj){
         renderHTML(obj);
+        sum += obj.time
       })
+      $('span.sum').html(Math.floor(sum/60)+'h'+sum%60+'m');
       loadEvents();
     })
     .fail(function(err){

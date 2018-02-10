@@ -2,10 +2,10 @@
   <div class="header row">
     <h1 class="col-md-8 col-xs-12">auto_align_app</h1>
     <p class="time col-md-2 hidden-xs">合計時間<br />
-      <%= "#{@sum_time/60}h#{@sum_time%60}m" %>
+      <span class="sum"><%= "#{@sum_time/60}h#{@sum_time%60}m" %></span>
     </p>
     <p class="col-xs-6 visible-xs">合計時間
-      <%= "#{@sum_time/60}h#{@sum_time%60}m" %>
+      <span class="sum"><%= "#{@sum_time/60}h#{@sum_time%60}m" %></span>
     </p>
     <p class="user col-md-2 hidden-xs">
       <%= current_user.name %><br />
