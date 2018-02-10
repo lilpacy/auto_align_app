@@ -163,10 +163,10 @@ $(document).on('turbolinks:load', function(){
     var deadline = obj.deadline ? ''+time.year+'/'+time.month+'/'+time.date+'' : '　　　　　';
     $('div.li-wrapper').append(
       '<li class="row">'+
-        '<span id="title" class="col-xs-6" data="'+obj.id+'">'+obj.title+'</span>'+
-        '<span id="influence" class="col-xs-2" data="'+obj.id+'">'+obj.influence+'</span>'+
-        '<span id="time" class="col-xs-2" data="'+obj.id+'">'+obj.time+'</span>'+
-        '<span id="deadline" class="col-xs-2" data="'+obj.id+'">'+
+        '<span id="title" class="col-md-6" data="'+obj.id+'">'+obj.title+'</span>'+
+        '<span id="influence" class="col-md-2 col-xs-3" data="'+obj.id+'">'+obj.influence+'</span>'+
+        '<span id="time" class="col-md-2 col-xs-3" data="'+obj.id+'">'+obj.time+'</span>'+
+        '<span id="deadline" class="col-md-2 col-xs-6" data="'+obj.id+'">'+
           '<p class="deadline">'+deadline+'</p>'+
           '<p class="delete" data="'+obj.id+'">削除</p>'+
         '</span>'+

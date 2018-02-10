@@ -1,0 +1,51 @@
+.container {
+  background-color: #eee;
+  list-style: none;
+  min-width: 200px;
+  .header {
+    position: relative;
+    .time {
+      position: absolute;
+      bottom: 0px;
+      right: 16.66666667%;
+    }
+    .user {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+    }
+  }
+  .body {
+    li {
+      background-color: #ccc;
+      span {
+        padding: 7px 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+      form {
+        label#obj_title {
+          width: auto;
+        }
+        input#obj_title {
+          width: calc( 100% - 65px );
+        }
+        input#obj_influence, input#deadline, input#time {
+          width: calc( 100% - 50px );
+        }
+        input#obj_time {
+          width: calc( 100% - 65px );
+        }
+        input#datepicker {
+          width: calc( 100% - 35px );
+        }
+        input.send{
+          margin: auto;
+        }
+      }
+      .delete {
+        text-align: right;
+      }
+    }
+  }
+}
