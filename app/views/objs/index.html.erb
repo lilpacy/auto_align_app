@@ -1,10 +1,10 @@
 <div class="container">
   <div class="header row">
-    <h1 class="col-xs-8">auto_align_app</h1>
-    <p class="time col-xs-2">合計所要時間<br />
+    <h1 class="col-md-8 col-xs-6">auto_align_app</h1>
+    <p class="time col-md-2 col-xs-3">合計時間<br />
       <%= "#{@sum_time/60}時間#{@sum_time%60}分" %>
     </p>
-    <p class="user col-xs-2">
+    <p class="user col-md-2 col-xs-3">
       <%= current_user.name %>さん<br />
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
     </p>
@@ -12,23 +12,23 @@
   <div class="body">
     <li class="row">
       <%= form_for(@obj, method: :post, url: objs_path, class: 'form-inline') do |f| %>
-        <span class="col-xs-4">
+        <span class="col-md-4">
           <%= f.label :title, 'タスク名' %>
           <%= f.text_field :title, placeholder: 'タスク名', autofocus: true %>
         </span>
-        <span class="col-xs-2">
+        <span class="col-md-2">
           <%= f.label :influence, '影響力' %>
           <%= f.text_field :influence, placeholder: '1~100' %>
         </span>
-        <span class="col-xs-2">
+        <span class="col-md-2">
           <%= f.label :time, '所要時間' %>
           <%= f.text_field :time, placeholder: '分単位' %>
         </span>
-        <span class="col-xs-2">
+        <span class="col-md-2">
           <%= f.label :deadline, '期日' %>
           <%= f.text_field :deadline, placeholder: '期日', id: 'datepicker' %>
         </span>
-        <span class="col-xs-2" style="text-align: center;">
+        <span class="col-md-2" style="text-align: center;">
           <%= f.submit 'Send', class: 'send' %>
         </span>
       <% end %>
