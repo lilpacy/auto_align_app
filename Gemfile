@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
+gem 'bootstrap', '~> 4.0.0'
 
 group :production do
   gem 'rails_12factor'
