@@ -92,7 +92,7 @@ $(document).on('turbolinks:load', function(){
                 renderHTML(obj);
                 sum += obj.time
               })
-              $('span.sum').html(Math.floor(sum/60)+'h'+sum%60+'m');
+              $('span.sum').html(Math.floor(sum/60)+'時間'+sum%60+'分');
               loadEvents();
             })
             .fail(function(){
@@ -151,7 +151,7 @@ $(document).on('turbolinks:load', function(){
             renderHTML(obj);
             sum += obj.time
           })
-          $('span.sum').html(Math.floor(sum/60)+'h'+sum%60+'m');
+          $('span.sum').html(Math.floor(sum/60)+'時間'+sum%60+'分');
           loadEvents();
         })
         .fail(function(err){
@@ -214,7 +214,7 @@ $(document).on('turbolinks:load', function(){
         renderHTML(obj);
         sum += obj.time
       })
-      $('span.sum').html(Math.floor(sum/60)+'h'+sum%60+'m');
+      $('span.sum').html(Math.floor(sum/60)+'時間'+sum%60+'分');
       loadEvents();
     })
     .fail(function(err){
