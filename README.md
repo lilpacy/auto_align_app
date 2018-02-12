@@ -8,7 +8,7 @@
 
 「じゃあ、どうすれば最も効率のいい時間の使い方ができるのか？」その1つの方法論として、タスクを4象限に分ける、というものがあります。
 
-![](https://blog-imgs-42.fc2.com/k/a/o/kaorilavender/Image_20140116111333df8.png)
+![](https://user-images.githubusercontent.com/26163436/36083602-8d1bf76e-0ff7-11e8-847a-612b06715843.png)
 出典:http://kaorilavender.blog.fc2.com/blog-entry-404.html
 
 「人は得てして、第1領域、第3領域にばかり気を取られて、長期的なスパンで考えると、一番影響力の大きい第2領域を考慮できてないのではないか」そう思うようになりました。
