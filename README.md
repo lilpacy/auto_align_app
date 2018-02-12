@@ -1,6 +1,6 @@
 # auto_align_app
 
-![](https://i.gyazo.com/4279d497a4c0810f346cd7edf06a2121.gif)
+![](https://gyazo.com/867958e87cba1a22222b8639fcb7ee1e.gif)
 ![](https://i.gyazo.com/d0dcc327659e2fec59e8f3ed889314d3.gif)
 
 ## なぜ作ったのか
