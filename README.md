@@ -74,3 +74,6 @@
 パスワード:demo0000
 
 上記、入力してお試しくださいませ。
+
+アプリ本体へのリンク
+https://auto-align-app.herokuapp.com/
