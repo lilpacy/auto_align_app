@@ -1,24 +1,13 @@
-# README
+# auto_align_app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## なぜ作ったのか
+「本当に大切なことに時間が使えてないんではないか」そう危惧したことが始まりです。
 
-Things you may want to cover:
+## なんのために作ったのか
 
-* Ruby version
+## 何を作ったのか
 
-* System dependencies
+## どのように使うのか
 
-* Configuration
+## どのように作ったのか
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
