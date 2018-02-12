@@ -1,5 +1,8 @@
 # auto_align_app
 
+![](https://i.gyazo.com/4279d497a4c0810f346cd7edf06a2121.gif)
+![](https://i.gyazo.com/44db1d5f2a38ce978ca7d9cd0a1aff59.gif)
+
 ## なぜ作ったのか
 「本当に大切なことに時間が使えてないんではないか」そう危惧したことが始まりです。
 
