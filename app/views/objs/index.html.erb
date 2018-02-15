@@ -18,7 +18,7 @@
 <div class="body">
   <li class="row">
     <%= form_for(@obj, method: :post, url: objs_path, class: 'form-inline') do |f| %>
-      <span class="col-md-4">
+      <span class="col-md-5">
         <%= f.label :title, 'タスク名' %>
         <%= f.text_field :title, placeholder: 'タスク名', autofocus: true %>
       </span>
@@ -34,7 +34,7 @@
         <%= f.label :deadline, '期日' %>
         <%= f.text_field :deadline, placeholder: '期日', id: 'datepicker' %>
       </span>
-      <span class="col-md-2" style="text-align: center;">
+      <span class="col-md-1" style="text-align: center;">
         <%= f.submit 'Send', class: 'send' %>
       </span>
     <% end %>
